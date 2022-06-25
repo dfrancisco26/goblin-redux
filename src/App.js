@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import GoblinForm from './GoblinForm';
 import GoblinList from './GoblinList';
 import Goblin from './Goblin';
@@ -12,9 +13,29 @@ function App() {
       goblinFormHP, which is how we track the user input for the current HP of the goblin in the form
       goblinFormColor, which is how we track the user input for the current color of the goblin in the form
 */
-  
+
+  const [goblinFormName, setGoblinFormName] = useState('');
+  const [goblinFormHP, setGoblinFormHP] = useState('');
+  const [goblinFormName, setGoblinFormName] = useState('');
+
+
+  const [allGoblins, setAllGoblins] = useState([
+    {
+      name: 'gobert downey jr',
+      hp: 4,
+      color: 'green'
+    },
+    {
+      name: 'goberta flack',
+      hp: 7,
+      color: 'pink'
+    }
+  ]);
+  const [visibleGoblins, setVisibleGoblins] = useState(allGoblins);
+
+
   function submitGoblin(e) {
-    e.preventDefault()
+    e.preventDefault();
     
     // on submit, make a new goblin object with a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
 
@@ -68,7 +89,7 @@ function App() {
         */
       />
       <GoblinList 
-        goblins={[]} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
+        allGoblins={allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
