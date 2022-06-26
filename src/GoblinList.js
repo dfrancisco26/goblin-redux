@@ -1,7 +1,7 @@
 import React from 'react';
 import Goblin from './Goblin';
 
-export default function GoblinList(...allGoblins) {
+export default function GoblinList({ allGoblins }) {
   return (
     <div className='goblin-list quarter'>
       {allGoblins.map((goblin, i)=> {

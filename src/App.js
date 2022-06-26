@@ -16,7 +16,7 @@ function App() {
 
   const [goblinFormName, setGoblinFormName] = useState('');
   const [goblinFormHP, setGoblinFormHP] = useState('');
-  const [goblinFormName, setGoblinFormName] = useState('');
+  const [goblinFormColor, setGoblinFormColor] = useState('');
 
 
   const [allGoblins, setAllGoblins] = useState([
@@ -34,6 +34,11 @@ function App() {
   const [visibleGoblins, setVisibleGoblins] = useState(allGoblins);
 
 
+  const goblin = {
+    name: '',
+    hp: 4,
+    color: ''
+  };
   function submitGoblin(e) {
     e.preventDefault();
     
