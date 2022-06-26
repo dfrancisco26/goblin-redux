@@ -34,11 +34,6 @@ function App() {
   const [visibleGoblins, setVisibleGoblins] = useState(allGoblins);
 
 
-  const goblin = {
-    name: '',
-    hp: 4,
-    color: ''
-  };
   function submitGoblin(e) {
     e.preventDefault();
     
@@ -68,12 +63,12 @@ function App() {
   return (
     <div className="App">
       <div className='current-goblin quarter'>
-        <Goblin goblin={{
+        <Goblin name={goblinFormName} hp={goblinFormHP} color={goblinFormColor}
           /* 
             use the goblin form state to make a goblin object and to display it. 
             This will let the user see the current form state 
           */
-        }}/>
+        />
       </div>
       <div className='goblin-filter quarter'>
         Filter Goblins
@@ -81,6 +76,13 @@ function App() {
         <input onChange={(e) => handleFilterGoblins(e.target.value)} />
       </div>
       <GoblinForm 
+        submitGoblin={submitGoblin}
+        goblinFormName={goblinFormName}
+        setGoblinFormName={setGoblinFormName}
+        goblinFormColor={goblinFormColor}
+        setGoblinFormColor={setGoblinFormColor}
+        goblinFormHP={goblinFormHP}
+        setGoblinFormHP={setGoblinFormHP}
         /*
         This component takes in a ton of props! 
         Here is the list of props to pass:
