@@ -87,7 +87,7 @@ function App() {
             This will let the user see the current form state 
           */
         />
-      </div>
+      </div>goblin filter
       <div className='goblin-filter quarter'>
         Filter Goblins
         {/* note that handleFilterGoblins is defined upstairs. This is where the allGoblins array gets filtered */}
