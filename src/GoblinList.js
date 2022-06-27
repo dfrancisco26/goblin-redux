@@ -1,10 +1,10 @@
 import React from 'react';
 import Goblin from './Goblin';
 
-export default function GoblinList({ allGoblins, handleDeleteGoblin }) {
+export default function GoblinList({ visibleGoblins, handleDeleteGoblin }) {
   return (
     <div className='goblin-list quarter'>
-      {allGoblins.map((goblin, i) => {
+      {visibleGoblins.map((goblin, i) => {
         return <div onClick={() => handleDeleteGoblin(i)} className='goblin' key={goblin.name + i + goblin.color}>
           <Goblin name = {goblin.name} hp = {goblin.hp} color = {goblin.color} />
         </div>;
