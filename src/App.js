@@ -47,7 +47,11 @@ function App() {
     // clear out the goblin form state items by setting them to empty strings. This will cause the form to reset in the UI.
   }
 
-  function handleDeleteGoblin(name) {
+  function handleDeleteGoblin(index) {
+    allGoblins.splice(index, 1);
+
+    setAllGoblins(allGoblins.slice());
+    setAllGoblins([...allGoblins]);
     // find the index of the goblin in allGoblins with this name
 
     // use splice to delete the goblin object at this index
