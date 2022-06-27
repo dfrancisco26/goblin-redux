@@ -17,7 +17,9 @@ function App() {
   const [goblinFormName, setGoblinFormName] = useState('');
   const [goblinFormHP, setGoblinFormHP] = useState('');
   const [goblinFormColor, setGoblinFormColor] = useState('');
-
+  const goblin = {
+    name: goblinFormName, hp: goblinFormHP, color: goblinFormColor
+  };
 
   const [allGoblins, setAllGoblins] = useState([
     {
@@ -37,6 +39,7 @@ function App() {
   function submitGoblin(e) {
     e.preventDefault();
     
+    setAllGoblins([...allGoblins, goblin]);
     // on submit, make a new goblin object with a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
 
     // update the allGoblins array. Add the new goblin to the allGoblins array immutably.
